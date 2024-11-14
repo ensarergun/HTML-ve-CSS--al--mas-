@@ -1,0 +1,307 @@
+/* Bu bölümü tek tek elemanları şekillendirdikten sonra anlat */
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  /* color: blue; ctrl+k,c kısa yol comment */
+  /* font-family: sans-serif; */
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 26px;
+  /* color: #1098ad; */
+}
+
+h2 {
+  font-size: 40px;
+  /* font-family: sans-serif; */
+}
+h3 {
+  font-size: 30px;
+  /* font-family: sans-serif; */
+}
+h4 {
+  font-size: 20px;
+  /* font-family: sans-serif; */
+
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  /* font-family: sans-serif; */
+  line-height: 1.5; /* font size'n 1.5 katı olacak anlamına gelir */
+}
+li {
+  /* font-family: sans-serif; */
+  font-size: 20px;
+}
+
+/* footer p {
+  font-size: 16px;
+} */
+
+/* article header p {
+  font-style: italic;
+} */
+
+/* id seçimi */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+.copyright {
+  font-size: 14px;
+}
+/* class seçimi */
+.ilgili_yazar {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* ilgili konular bölümünden noktaları kaldırma */
+/* ul {
+  list-style: none;
+} */
+/* Yanlış uygulama çünkü diğer ul listelerden de noktaları kaldıracak, class kullanılmalı*/
+
+.ilgili-liste {
+  list-style: none;
+}
+
+/* header {
+  background-color: #f7f7f7;
+} */
+/* yanlış çünkü sadece üstteki başlığın arkaplanını değiştirmek istiyoruzz */
+
+.ana-başlık {
+  background-color: #f7f7f7;
+}
+
+aside {
+  background-color: #f7f7f7;
+  /* border: 5px solid #1098ad; */
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
+
+/* .ilk-madde {
+  font-weight: bold;
+} */
+/* li:first-child {
+  font-weight: bold;
+}
+li:last-child {
+  font-style: italic;
+}
+li:nth-child(2) {
+  color: red;
+}
+li:nth-child(odd) {
+  color: green;
+} */
+
+article p:first-child {
+  color: red;
+}
+
+/* bu kod çalışmaz çünkü article in ilk elemanı paragraf değil */
+article p:last-child {
+  color: red;
+}
+
+/* Styling hyperlinks */
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+a:visited {
+  color: #1098ad;
+}
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline dashed orangered;
+}
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+/* seçim karmaşasının engellenmesi için öncelik sırasına dikkat edilmesi gereklidir
+örnek olarak footer içindeki p ye hem class hem de id ataması yapalım, ayrıca elaman olarak da aynı elamanı seçelim */
+
+footer p {
+  color: green;
+}
+#telif {
+  color: red;
+  font-size: 14px;
+}
+.telif {
+  color: blue;
+}
+.metin {
+  color: pink;
+}
+/* eğer tekrar elaman seçimi yapıp sonuna !important etiketini koyarsak işlem değişir */
+
+/* footer p {
+  color: green !important;
+} */
+
+/* universal selector kavramını anlat */
+body {
+  /* font-family: sans-serif; */
+  border-top: 10px solid #1098ad;
+}
+* {
+  /* font-family: sans-serif;
+  border-top: #1098ad; */
+}
+
+/* -----------------------------------------MARGIN ve PADDING---------------------------------------------------------------- */
+
+.ana-başlık {
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; */
+  padding: 20px 40px;
+  /* Padding değerleri için DevTool'a bakılması faydalı olabilir. padding değerleri yukarıdan başlayarak sağ yönünde
+  verilir. Eğer 2 değer varsa ilk değer üst ve alt, ikinci değer ise sağ ve solu ifade eder */
+}
+/* li elemanları için margin-bottom uygulayalım  */
+li {
+  margin-bottom: 10px;
+}
+/* ancak liste elemanlarının son elemanında margin bottom olmasını istemiyoruz, bu nedenle aşağıdaki kodu uygulayalım */
+
+li:last-child {
+  margin-bottom: 0;
+}
+/* Global reset: margin ve padding değerlerinin başlangıçta 0 olarak ayarlanması anlamına gelir.
+Bu işlemi yapmak için tüm elamanları seçen global selector operatörü kullnılır (*) */
+* {
+  margin: 0;
+  padding: 0;
+}
+aside {
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  /* Bu iki işlemi daha kısa olarak aşağıdaki gibi yazalım  */
+  padding: 50px 0;
+}
+/* Yukarıdan aşağıya aralıkları düzenleyelim */
+.ana-başlık {
+  margin-bottom: 60px;
+}
+h2 {
+  margin-bottom: 30px;
+}
+/* yardımcı başlık olarak yeni class verelim, ikinci header kısmına*/
+.yardımcı-başlık {
+  margin-bottom: 40px;
+}
+/* tüm paragraflara margin bottom verelim */
+p {
+  margin-bottom: 15px;
+}
+/* liste nokta ve numaraları kayboldu onları düzenleyelim  */
+ol,
+ul {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+h3 {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  /* Burada margin çökmesi oluşur, çünkü önceki paragrafın altındaki 15px kaybolur */
+}
+article {
+  margin-bottom: 60px;
+}
+/* -----------------------------------------------ADDING DIMENSIONS--------------------------------------------------- */
+
+aside {
+  width: 500px;
+}
+.ana-başlık {
+  height: 80px;
+  /* Bu yüksekliği belirttiğimiz zaman üzerine padding yüksekliklerini de 
+  eklediğimiz zaman gerçek yüksekliği bulabiliriz  */
+}
+/* resim elemanı üzerinde işlem yapmak için resime class veriyoruz  */
+.post-img {
+  width: 100%;
+  /* oran olarak vermek sayfayı adaptif hale getirir */
+  height: auto;
+}
+/*------------------- Sayfayı ortalama ---------------------*/
+/* Sayfayı oratalamak için tüm içeriğe (body nin tamamına) container isimli bir class atayalım */
+
+.container {
+  width: 800px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* tek satırda kodu düzenlemek için */
+  margin: 0 auto;
+}
+/* ------------------BOX Types-----------------------------------*/
+/* 
+*display: block;
+*inline elemanlarda (strong, em, a,img) height ve width uygulanmaz
+padding ve margin sadece left/right olarak uygulanır
+no line break bulunur ve sadece genişliği kadar yer kaplar
+display: inline
+*/
+
+/* linkleri seçelim  */
+
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+  /* sağ sol uygulanır ama üst alt uygulanmaz */
+  /*display: block; */
+}
+/* ana başlık a fix height olan 80 px verildiği için artık içerik uymaz 
+bu nedenle ana başlıktaki height özelliğini kapatalım  */
+
+/* blok seviyesi elemanı inline yapmaya çalışalım */
+/* li {
+  display: inline;
+} 
+p{
+display:inline;
+}  
+*/
+/* Display: inline-block
+Dışarıdan inline elaman gibi görünür ancak block eleman gibi davranır
+sadece içerik kadar yer işgal eder
+line break oluşturmaz
+margin ve padding çalışır hem üst alt için hem sağ sol için
+*/
+nav a:link {
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+/* son linkin sağındaki margini kapatmak için iki kere pseudo class kullanalım */
+nav a:link:last-child {
+  margin-right: 0;
+}
+/* İmg etiketi her zaman inline-block olarak default değeri alır */
